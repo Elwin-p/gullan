@@ -79,7 +79,7 @@ export default function SmilePls() {
       <div className="card" style={{ maxWidth: '420px', width: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
         {step === 'show' ? (
           <h1 style={{ color: '#ab508aff', textShadow: '0 0 10px #000', textAlign: 'center', fontSize: '2rem', marginBottom: '1.2rem' }}>
-            {'bootifull'}
+            {'pookie 😍'}
           </h1>
         ) : (
           <>
