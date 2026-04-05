@@ -191,16 +191,19 @@ h1 {
 /* ---- OTP ---- */
 .otp-input-wrap {
   display: flex;
-  gap: 0.6rem;
+  gap: clamp(0.3rem, 1.5vw, 0.6rem);
   justify-content: center;
   margin-bottom: 2rem;
+  width: 100%;
 }
 
 .otp-input-wrap input {
-  width: 3.2rem;
-  height: 3.8rem;
+  flex: 1;
+  min-width: 0;
+  max-width: 3.2rem;
+  height: clamp(3rem, 13vw, 3.8rem);
   text-align: center;
-  font-size: 1.4rem;
+  font-size: clamp(1.1rem, 5vw, 1.4rem);
   font-weight: 700;
   font-family: inherit;
   background: rgba(255, 255, 255, 0.05);
@@ -254,4 +257,39 @@ body.SmilePls-page {
 body.SmilePls-page::before,
 body.SmilePls-page::after {
   display: none;
+}
+
+/* ---- Responsive adjustments ---- */
+@media (max-width: 480px) {
+  .card {
+    padding: 2rem 1.2rem;
+  }
+}
+
+/* ---- Pop Image ---- */
+.pop-image {
+  position: absolute;
+  bottom: -20px;
+  right: -20px;
+  max-width: 150px;
+  width: 45%;
+  transform: translateY(100%) rotate(10deg);
+  opacity: 0;
+  animation: popUpSlowly 3s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  z-index: 10;
+  pointer-events: none;
+}
+
+@keyframes popUpSlowly {
+  0% {
+    transform: translateY(100%) rotate(15deg);
+    opacity: 0;
+  }
+  15% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(0) rotate(-5deg);
+    opacity: 1;
+  }
 }

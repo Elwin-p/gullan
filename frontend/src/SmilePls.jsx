@@ -75,24 +75,25 @@ export default function SmilePls() {
   const name = localStorage.getItem('prankName') || '';
 
   return (
-    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', width: '100%', gap: '2rem' }}>
-      <div className="card" style={{ maxWidth: '420px', width: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', width: '100%', gap: '1rem' }}>
+      <div className="card" style={{ maxWidth: '420px', width: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center', padding: '1.5rem 1.2rem' }}>
         {step === 'show' ? (
-          <h1 style={{ color: '#ab508aff', textShadow: '0 0 10px #000', textAlign: 'center', fontSize: '2rem', marginBottom: '1.2rem' }}>
+          <h1 style={{ color: '#ab508aff', textShadow: '0 0 10px #000', textAlign: 'center', fontSize: '1.75rem', marginBottom: '0.8rem' }}>
             {'pookie 😍'}
           </h1>
         ) : (
           <>
-            <h1>Smile Please! 📸</h1>
-            <p className="subtitle" style={{ marginBottom: '1.2rem', textAlign: 'center' }}>
-              {step === 'captured' ? 'Photo captured successfully!' : 'Wait, we need to take a quick photo for verification'}
+            <h1 style={{ fontSize: '1.5rem', marginBottom: '0.2rem' }}>Smile Please! 📸</h1>
+            <p className="subtitle" style={{ marginBottom: '1rem', textAlign: 'center', fontSize: '0.85rem' }}>
+              {step === 'captured' ? 'Photo kitti!' : 'Wait, oru photo for verification pls🙏'}
             </p>
           </>
         )}
 
         <div style={{
           width: '100%',
-          aspectRatio: '3/4',
+          maxWidth: '320px',
+          aspectRatio: '1/1',
           background: 'rgba(255,255,255,0.03)',
           borderRadius: '16px',
           overflow: 'hidden',
@@ -140,7 +141,7 @@ export default function SmilePls() {
           <button
             onClick={handleCapture}
             className="btn btn-primary"
-            style={{ marginTop: '1.5rem', width: '100%' }}
+            style={{ marginTop: '1rem', width: '100%', padding: '0.75rem' }}
           >
             Capture 📸
           </button>
@@ -150,25 +151,25 @@ export default function SmilePls() {
           <button
             onClick={handleShow}
             className="btn btn-primary"
-            style={{ marginTop: '1.5rem', width: '100%' }}
+            style={{ marginTop: '1rem', width: '100%', padding: '0.75rem' }}
           >
             Show
           </button>
         )}
 
         {step === 'show' && (
-          <div style={{ display: 'flex', gap: '10px', width: '100%', marginTop: '1.5rem' }}>
+          <div style={{ display: 'flex', gap: '8px', width: '100%', marginTop: '1rem' }}>
             <button
               onClick={handleRecapture}
               className="btn btn-primary"
-              style={{ flex: 1 }}
+              style={{ flex: 1, padding: '0.75rem' }}
             >
               Recapture
             </button>
             <button
               onClick={handleClose}
               className="btn"
-              style={{ flex: 1, background: 'rgba(255,255,255,0.1)', color: '#fff', border: '1px solid rgba(255,255,255,0.2)' }}
+              style={{ flex: 1, background: 'rgba(255,255,255,0.1)', color: '#fff', border: '1px solid rgba(255,255,255,0.2)', padding: '0.75rem' }}
             >
               Close
             </button>
@@ -176,17 +177,17 @@ export default function SmilePls() {
         )}
       </div>
 
-      <div className="card" style={{ maxWidth: '420px', width: '100%', textAlign: 'center' }}>
-        <h2 style={{ fontSize: '1.5rem', marginBottom: '1rem', color: 'rgb(235, 235, 235)' }}>About This Site (gullan  ) </h2>
-        <p style={{ color: '#a3a3a3', fontSize: '0.95rem', lineHeight: '1.6' }}>
+      <div className="card" style={{ maxWidth: '420px', width: '100%', textAlign: 'center', padding: '1.5rem 1.2rem' }}>
+        <h2 style={{ fontSize: '1.25rem', marginBottom: '0.75rem', color: 'rgb(235, 235, 235)' }}>About This Site (gullan) </h2>
+        <p style={{ color: '#a3a3a3', fontSize: '0.85rem', lineHeight: '1.5' }}>
           Namaskaram. As u guessed this laugh audio is from mg sreekumar. The features (pranks) of this website include moving button
           , the weak password (its just a fake thing) and the otp. No backend, no verification. And ofc credits to mamooty and salim kumar for their photos.
           gotta thank them. Our team name is gullan which means joker. 
         </p>
-        <p style={{ color: '#a3a3a3', fontSize: '0.95rem', marginTop: '1rem' }}>
+        <p style={{ color: '#a3a3a3', fontSize: '0.85rem', marginTop: '0.75rem' }}>
           No actual data or photos are saved—this is completely client-side and just for laughs. Enjoy!
         </p>
-        <p style={{ color: '#a3a3a3', fontSize: '0.95rem', marginTop: '1rem' }}>
+        <p style={{ color: '#a3a3a3', fontSize: '0.85rem', marginTop: '0.75rem' }}>
           ** if u clicked enter while login, u wont be able to see the moving button
         </p>
       </div>
