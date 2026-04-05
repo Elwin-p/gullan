@@ -41,6 +41,13 @@ export default function Login() {
     return () => clearInterval(interval);
   }, [isMoving]);
 
+  const handleTouchStart = (e) => {
+    if (!isMoving) {
+      e.preventDefault(); // Prevents the first tap from clicking so it runs away
+      handleMouseEnter();
+    }
+  };
+
   return (
     <div className="card">
       {/* <span className="card-icon"></span> */}
@@ -64,7 +71,18 @@ export default function Login() {
           {errorMsg && <p style={{ color: '#ff4d4f', marginTop: '0.5rem', fontSize: '0.875rem' }}>{errorMsg}</p>}
         </div>
 
-        <button type="submit" className="btn btn-primary" onMouseEnter={handleMouseEnter} style={{ transform: `translate(${position.x}px, ${position.y}px)` }}>Continue →</button>
+        <button 
+          type="submit" 
+          className="btn btn-primary" 
+          onMouseEnter={handleMouseEnter} 
+          onTouchStart={handleTouchStart}
+          style={{ 
+            transform: `translate(${position.x}px, ${position.y}px)`, 
+            transition: isMoving ? 'transform 0.15s ease-out' : 'transform 0.3s ease-out' 
+          }}
+        >
+          Continue →
+        </button>
       </form>
     </div>
   );
